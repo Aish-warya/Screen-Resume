@@ -7,18 +7,18 @@ import pyPdf
 
 d={}
 i=1
-path="/home/ankita/Screen-Resume/allresumes"
+path="/home/ankita/Screen-Resume/allresumes/spam"
 
 for filename in os.listdir(path):
-	pdf = pyPdf.PdfFileReader(open("/home/ankita/Screen-Resume/allresumes/"+filename, "rb"))
+	pdf = pyPdf.PdfFileReader(open("/home/ankita/Screen-Resume/allresumes/spam/"+filename, "rb"))
 	key=str(i)+".txt"
 	value=filename
 	d[key]=value
-	f=open(str(i)+".txt","w")
-	a=open("allresumes.txt","a")
+	f=open('s'+str(i)+".txt","w")
+	a=open("allspamresumes.txt","a")
 	for page in pdf.pages:
 		f.write(page.extractText())
 		a.write(page.extractText())
 	i=i+1
 
-print d	
+//print d	
